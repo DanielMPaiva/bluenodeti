@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue Node TI | Suporte e Soluções em Tecnologia</title>
+  <meta name="description" content="Blue Node TI — Suporte técnico, manutenção, redes, servidores, sites, LGPD e consultoria em TI. Atendimento remoto em todo o Brasil e presencial no Rio de Janeiro." />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --blue-700:#0a4e9b;
+      --blue-900:#001f3f;
+      --accent:#00d1ff;
+      --card-bg: rgba(0,0,0,0.18);
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    /* ===== Reset / Base ===== */
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+
+    body {
+      margin: 0;
+      font-family: 'Elms Sans','Segoe UI', Arial, Tahoma, Geneva, Verdana, sans-serif;
+      background-color:#001f3f;
+      /*background-image: radial-gradient(circle at top right, #0a4e9b, #001f3f);*/
+      color: #fff;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-x:hidden;
+    }
+
+    /* ===== Header ===== */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 4%;
+      background: radial-gradient(circle at top right, #0a4e9b,#13122d,#13122d);
+
+      position:sticky;
+      top:0;
+      z-index:1200;
+      transition: box-shadow 0.25s ease, backdrop-filter 0.25s;
+      backdrop-filter: blur(0px);
+    }
+    header.scrolled{
+      box-shadow: 0 6px 22px rgba(0,0,0,0.45);
+      backdrop-filter: blur(4px);
+    }
+
+    .logo img{ width:200px; max-width: 85%; height:auto; display:block; }
+
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:18px;
+      margin:0;
+      padding:0;
+      align-items:center;
+    }
+    nav a{ color:#fff; text-decoration:none; font-weight:600; transition: color .2s; }
+    nav a:hover{ color:var(--accent); }
+
+    .cta {
+      background:var(--accent);
+      color:#001f3f;
+      padding:10px 18px;
+      border-radius:28px;
+      font-weight:700;
+      text-decoration:none;
+      display:inline-block;
+      box-shadow: 0 6px 18px rgba(0,209,255,0.18);
+      transition: transform .15s ease, background .15s;
+    }
+    .cta:hover{ transform: translateY(-3px); background:#00b8e6; }
+
+    /* ===== Hero ===== */
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      gap:2rem;
+      padding:40px 4%;
+      background:
+        linear-gradient(90deg, rgba(0,31,63,1) 0%, rgba(10,78,155,0.85) 100%),
+        url('https://www.fundstalent.com/wp-content/uploads/2021/02/Funds-Talent-Corporate-Manager.jpg') no-repeat right bottom;
+      background-size:cover;
+      background-position: bottom center;
+    }
+    .hero-inner{
+      max-width:920px;
+      width:100%;
+      display:flex;
+      gap:2.5rem;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .hero-text{
+      flex:1 1 520px;
+      color:#fff;
+    }
+    .hero-text h1{
+      margin:0 0 12px 0;
+      font-size:2.6rem;
+      line-height:1.08;
+      letter-spacing: -0.02em;
+    }
+    .hero-text p.lead{
+      margin:0 0 18px 0;
+      font-size:1.15rem;
+      color:#d7e2ea;
+    }
+    .hero-text p.body{
+      margin:0 0 18px 0;
+      color:#cfd9e3;
+      line-height:1.6;
+    }
+    .hero-actions{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+    .hero .btn{
+      background:var(--accent);
+      color:#001f3f;
+      padding:12px 26px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow: 0 10px 28px rgba(0,209,255,0.18);
+    }
+    .hero .btn.secondary{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.12);
+      color:#fff;
+      font-weight:700;
+    }
+
+    /* ===== Sections ===== */
+    main{ max-width:1200px; margin: 28px auto; padding: 0 18px; }
+    section{ padding:28px; background: radial-gradient(circle at top right, #0a4e9b, #001f3f);; margin-bottom:20px; border-radius:12px; }
+    section h2{ color:var(--accent); font-size:1.6rem; margin:0 0 8px 0; }
+    section p{ margin:0; color:#cfd9e3; line-height:1.6; }
+    section .btn{
+      background:var(--accent);
+      color:#001f3f;
+      padding:12px 26px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:800;
+      box-shadow: 0 10px 28px rgba(0,209,255,0.18);
+    }
+
+    /* ===== Services grid ===== */
+    .services{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+      margin-top:16px;
+    }
+    .service-card{
+      background: var(--card-bg);
+      padding:16px;
+      border-radius:10px;
+      transition: transform .22s ease, box-shadow .22s ease;
+      min-height:120px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+	text-align:center;
+    }
+    .service-card h3{ margin:0 0 8px 0; color:var(--accent); font-size:1.05rem; }
+    .service-card p{ margin:0; color:#dbe7ef; flex:1; text-align:left; }
+    .service-card:hover{
+      transform: translateY(-8px);
+      box-shadow: 0 18px 40px rgba(0, 209, 255, 0.12);
+    }
+
+    /* ===== CTA floating ===== */
+    .whatsapp-floating{
+      position:fixed;
+      right:20px;
+      bottom:22px;
+      z-index:1400;
+      display:inline-block;
+    }
+    .whatsapp-btn{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      background:green;
+      color:#fff;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;	
+      /*border:5px solid rgba(0,0,0,1);*/
+      box-shadow:0 0 20px rgba(0,0,0,0.5);
+
+    }
+
+    /* ===== Footer ===== */
+    footer{ text-align:center; padding:18px; color:#9aa6b3; background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.12)); font-size:0.95rem; }
+
+    /* ===== Responsive tweaks ===== */
+    @media (max-width:940px){
+      .hero-text h1{ font-size:2.2rem }
+      .hero{ padding:30px 4% }
+    }
+    @media (max-width:680px){
+      nav ul{ gap:10px; }
+      .hero{ background-position: center 70%; padding:28px 4% }
+      .hero-text h1{ font-size:1.8rem }
+      .logo img{ width:150px }
+      .service-card{ min-height:140px }
+    }
+
+    /* Small entrance animation */
+    .fade-up{ transform: translateY(6px); opacity:0; transition: all .6s cubic-bezier(.2,.9,.3,1); }
+    .fade-up.visible{ transform:none; opacity:1; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header id="site-header">
+    <div class="logo" aria-label="Blue Node TI">
+      <img src="bluenodeti.png" alt="Logo Blue Node TI">
+    </div>
+
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#about">Sobre</a></li>
+        <li><a href="#services">Serviços</a></li>
+        <li><a class="cta" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-inner">
+      <div class="hero-text fade-up" id="hero-title">
+        <h1>Suporte e Soluções em Tecnologia</h1>
+
+        <p class="lead"><em>Tecnologia sem dor de cabeça. Você cuida do seu negócio — nós cuidamos do resto.</em></p>
+
+        <p class="body">
+          Oferecemos suporte técnico, consultoria, montagem e manutenção de computadores, projetos de TI, servidores, redes, soluções de segurança, adequação à LGPD, desenvolvimento de sistemas, criação de sites, marketing digital e automação comercial.
+        </p>
+
+        <p class="body">
+          Entregamos rapidez, confiança e atendimento técnico especializado — seja para sua casa ou empresa.
+          <br><strong>Atendimento remoto em todo o Brasil</strong> e <strong>presencial no Rio de Janeiro</strong> (Capital, Grande Rio, Região Serrana e Região dos Lagos).
+        </p>
+
+        <div class="hero-actions" aria-hidden="false">
+          <a class="btn" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Entrar em Contato</a>
+          <a class="btn" href="#services">Ver Serviços</a>
+        </div>
+      </div>
+
+      <!-- Optional: illustrative image (uncomment and replace file if desired) -->
+      <!-- <div class="hero-media fade-up" style="flex:0 0 360px;">
+        <img src="illustration.png" alt="Ilustração tecnologia" style="width:100%;max-width:360px;">
+      </div> -->
+    </div>
+  </section>
+
+  <main>
+    <!-- Services -->
+    <section id="services" class="fade-up">
+      <h2>Serviços</h2>
+
+      <div class="services" aria-label="Lista de serviços">
+        <div class="service-card">
+          <h3>💻 Suporte Técnico</h3>
+          <p>Diagnóstico, solução de problemas, otimização, remoção de vírus e suporte completo ao usuário. Atendimento remoto ou presencial com rapidez e precisão.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>🛠️ Montagem e Manutenção</h3>
+          <p>Montagem profissional, upgrades inteligentes e manutenção preventiva e corretiva para máxima performance e vida útil dos equipamentos.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>🖥️ Servidores & Infraestrutura</h3>
+          <p>Implantação, configuração e gestão de servidores físicos e virtuais. Active Directory, Office 365, Azure e ambientes corporativos otimizados.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>🌐 Redes Locais</h3>
+          <p>Redes estáveis e rápidas: cabeamento estruturado, roteadores, switches, Wi-Fi profissional e organização da infraestrutura de rede.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>🔒 Segurança da Informação</h3>
+          <p>Proteção de dados, políticas de segurança, firewall, backup e recuperação, controle de acessos e prevenção contra vulnerabilidades.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>📘 Adequação LGPD</h3>
+          <p>Mapeamento de dados, implementação de políticas e medidas técnicas para conformidade com a LGPD — reduzindo riscos e responsabilidades.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>🧩 Consultoria em TI</h3>
+          <p>Estratégia, análise e otimização de ambientes tecnológicos. Indicamos soluções para reduzir custos e aumentar performance.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>📁 Projetos de TI</h3>
+          <p>Planejamento e execução de projetos: expansão de infraestrutura, migrações, modernização e implantação de novas tecnologias.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>🖥️ Criação de Sites</h3>
+          <p>Sites rápidos e responsivos com foco em conversão: design profissional, SEO básico e landing pages otimizadas.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>⚙️ Automação Comercial</h3>
+          <p>Instalação e suporte para sistemas comerciais, emissão fiscal, integração com equipamentos e soluções ERP.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>📊 Desenvolvimento de Sistemas</h3>
+          <p>Soluções web sob medida, integrações e automações que agilizam processos e aumentam eficiência interna.</p>
+        </div>
+
+        <div class="service-card">
+          <h3>📣 Marketing Digital</h3>
+          <p>Gestão de redes sociais, campanhas, branding e materiais digitais para fortalecer sua presença online e gerar clientes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="fade-up">
+      <h2>Sobre a Blue Node TI</h2>
+      <p>A <strong>Blue Node TI</strong> entrega soluções completas em tecnologia, suporte técnico e infraestrutura para pessoas e empresas que buscam agilidade, confiabilidade e atendimento especializado.</p>
+      <p style="margin-top:12px;">Com mais de <strong>10 anos de experiência prática</strong>, garantimos ambientes estáveis e seguros, prontos para o crescimento dos nossos clientes.</p>
+      <p style="margin-top:12px;">Nossa missão: <strong>fazer a tecnologia trabalhar a favor do seu negócio</strong>, com atendimento claro, rápido e eficiente.</p>
+      </div>
+    </section>
+
+    <section id="CTA" class="fade-up">
+      <div style="margin-top:18px; text-align:center;">
+        <p style="margin:0 0 12px 0; font-weight:700; color:#FFF;">👉 Precisa de um parceiro confiável em TI? Fale conosco e receba uma avaliação gratuita.</p>
+        <a class="btn" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp CTA -->
+  <div class="whatsapp-floating">
+    <a class="whatsapp-btn" href="https://wa.me/5521974015057" target="_blank" rel="noopener" aria-label="Abrir WhatsApp" >
+	<img src="https://cdn.shopify.com/app-store/listing_images/ffb95be4237362644004138ee00dbf96/icon/CNjFm-_uwYQDEAE=.png" style="width:20px;"/>
+	WhatsApp
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Blue Node TI — Conecte, resolva, evolua.
+  </footer>
+
+  <!-- Small scripts: header shadow + entrance animations -->
+  <script>
+    (function(){
+      const header = document.getElementById('site-header');
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 8);
+      });
+
+      // reveal on scroll for .fade-up
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            io.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.15});
+
+      document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
