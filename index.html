@@ -126,10 +126,12 @@
       font-size:2.6rem;
       line-height:1.08;
       letter-spacing: -0.02em;
+      text-shadow: 0 0 12px rgba(0,0,0,0.4);
     }
     .hero-text p.lead{
       margin:0 0 18px 0;
-      font-size:1.15rem;
+/*      font-size:1.15rem;*/
+	font-size:x-large;
       color:#d7e2ea;
     }
     .hero-text p.body{
@@ -156,7 +158,8 @@
 
     /* ===== Sections ===== */
     main{ max-width:1200px; margin: 28px auto; padding: 0 18px; }
-    section{ padding:28px; background: radial-gradient(circle at top right, #0a4e9b, #001f3f);; margin-bottom:20px; border-radius:12px; }
+    section{ padding:28px; /*background: radial-gradient(circle at top right, #0a4e9b, #001f3f);*/ background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(4px); margin-bottom:20px; border-radius:12px; border: 1px solid rgba(255,255,255,0.05);}
     section h2{ color:var(--accent); font-size:1.6rem; margin:0 0 8px 0; }
     section p{ margin:0; color:#cfd9e3; line-height:1.6; }
     section .btn{
@@ -196,12 +199,18 @@
 
 	/* ==== icons ====*/
 	
-.material-symbols-outlined {
+/*.material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}*/
+
+.service-card .material-symbols-outlined{
+  font-size: 34px;
+  margin-bottom: 6px;
+  color: var(--accent);
 }
 
 
@@ -253,7 +262,7 @@
   <!-- Header -->
   <header id="site-header">
     <div class="logo" aria-label="Blue Node TI">
-      <img src="assets\bluenodetit.png" alt="Logo Blue Node TI">
+      <img src="assets/bluenodetit.png" alt="Logo Blue Node TI">
     </div>
 
     <nav aria-label="Navegação principal">
@@ -273,18 +282,11 @@
 
         <p class="lead"><em>Tecnologia sem dor de cabeça. Você cuida do seu negócio — nós cuidamos do resto.</em></p>
 
-	<!--
+	<br>
         <p class="body">
-          Oferecemos suporte técnico, consultoria, montagem e manutenção de computadores, projetos de TI, servidores, redes, soluções de segurança, adequação à LGPD, desenvolvimento de sistemas, criação de sites, marketing digital e automação comercial.
-        </p>
-	-->
-
-        <p class="body">
-	<!--
-          Entregamos rapidez, confiança e atendimento técnico especializado — seja para sua casa ou empresa.
-          <br>
-	-->
-Atendimento <strong>remoto em todo o Brasil</strong> e <strong>presencial no Rio de Janeiro</strong> (Capital, Grande Rio, Região Serrana e Região dos Lagos).
+          Empresa de TI no Rio de Janeiro especializada em suporte, redes, servidores e consultoria.
+	  <br>
+  	  Atendimento <strong>remoto em todo o Brasil</strong> e <strong>presencial no Rio de Janeiro</strong> (Capital, Grande Rio, Região Serrana e Região dos Lagos).
         </p>
 
         <div class="hero-actions" aria-hidden="false">

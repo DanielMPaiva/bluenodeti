@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blue Node TI | Suporte e Soluções em Tecnologia</title>
+  <meta name="description" content="Blue Node TI oferece suporte técnico, manutenção, consultoria e soluções em TI com agilidade e confiança. Atendimento remoto em todo o Brasil e presencial no Rio de Janeiro." />
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #00d1ff;
+      --primary-dark: #00b8e6;
+      --bg-dark: #001f3f;
+      --bg-light: #0a4e9b;
+      --muted: #cfd9e3;
+      --card-bg: rgba(0, 0, 0, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, system-ui, Arial;
+      color: #fff;
+    }
+
+    body {
+      background-image: radial-gradient(circle at top right, var(--bg-light), var(--bg-dark));
+      background-attachment: fixed;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 5%;
+      background: rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(6px);
+    }
+
+    .logo img {
+      width: 170px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .cta {
+      background: var(--primary);
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: #001f3f;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .cta:hover {
+      background: var(--primary-dark);
+    }
+
+
+    /* HERO */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 5% 5%;
+      min-height: 75vh;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: #001f3f;
+      padding: 14px 30px;
+      border-radius: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 14px rgba(0, 209, 255, 0.4);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: scale(1.03);
+    }
+
+    .btn.secondary {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      box-shadow: none;
+    }
+
+    .btn.secondary:hover {
+      background: var(--primary);
+      color: #001f3f;
+    }
+
+    .hero-image img {
+      width: 550px;
+      filter: drop-shadow(0 0 20px rgba(0, 209, 255, 0.5));
+    }
+
+
+    /* SEÇÕES */
+    section {
+      padding: 3rem 5%;
+      margin-bottom: 2rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    section h2 {
+      font-size: 1.9rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    /* SERVIÇOS */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      padding: 1.8rem;
+      border-radius: 14px;
+      transition: 0.3s;
+      text-align: left;
+      backdrop-filter: blur(4px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      background: rgba(0, 0, 0, 0.35);
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      background: rgba(0, 0, 0, 0.4);
+      color: #cfd9e3;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        text-align: center;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="assets/bluenodetit.png" alt="Blue Node TI - Tecnologia">
+  </div>
+
+  <nav>
+    <ul>
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#services">Serviços</a></li>
+      <li><a class="cta" href="https://wa.me/5521974015057" target="_blank">Contato</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Suporte e Soluções em Tecnologia</h1>
+    <p><i>Tranquilidade e segurança para você focar no que importa — o seu negócio.</i></p>
+
+    <p>
+      Suporte técnico, consultoria, montagem e manutenção de computadores, redes, servidores, segurança da informação, LGPD, automação comercial, criação de sites e desenvolvimento de sistemas.  
+      Atendimento remoto em todo o Brasil e presencial no Rio de Janeiro.
+    </p>
+
+    <a href="https://wa.me/5521974015057" class="btn" target="_blank">Entrar em Contato</a>
+    <a href="#services" class="btn secondary">Conhecer Serviços</a>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="services">
+  <h2>Serviços</h2>
+
+  <div class="services">
+
+    <div class="service-card">
+      <h3>💻 Suporte Técnico</h3>
+      <p>Atendimento remoto e presencial, diagnóstico, otimização e suporte ao usuário.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🛠️ Montagem & Manutenção</h3>
+      <p>Montagem profissional, upgrades e manutenção preventiva/corretiva.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🖥️ Servidores & Infraestrutura</h3>
+      <p>Active Directory, Office 365, Azure e ambientes corporativos.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🌐 Redes Locais</h3>
+      <p>Instalação, organização e otimização de redes estruturadas.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🔒 Segurança da Informação</h3>
+      <p>Firewall, backup, políticas de segurança e proteção de dados.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>📘 Adequação LGPD</h3>
+      <p>Mapeamento, processos e implementação de medidas técnicas.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🧩 Consultoria em TI</h3>
+      <p>Planejamento, análise e otimização tecnológica para empresas.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>🖥️ Criação de Sites</h3>
+      <p>Sites profissionais, landing pages e páginas otimizadas para conversão.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>⚙️ Automação Comercial</h3>
+      <p>Emissão fiscal, integração com sistemas e automação de processos.</p>
+    </div>
+
+    <div class="service-card">
+      <h3>📊 Desenvolvimento de Sistemas</h3>
+      <p>Sistemas web sob medida e integrações personalizadas.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="about">
+  <h2>Sobre Nós</h2>
+  <p>A <strong>Blue Node TI</strong> oferece soluções completas em tecnologia com foco em agilidade, confiança e inovação. São mais de 10 anos de experiência em suporte corporativo e consultoria.</p>
+  <p>Atendemos remotamente em todo o Brasil e presencialmente no Rio de Janeiro (Grande Rio, Região Serrana e Região dos Lagos).</p>
+</section>
+
+<footer>
+  © 2025 Blue Node TI — Conecte, resolva, evolua.
+</footer>
+
+</body>
+</html>
