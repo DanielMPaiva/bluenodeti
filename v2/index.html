@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Blue Node TI | Suporte Técnico, Redes e Soluções em TI - São João de Meriti</title>
+  <meta name="description" content="Blue Node TI — suporte técnico, manutenção, redes, servidores, LGPD, criação de sites e consultoria em TI. Atendimento remoto para todo o Brasil e presencial no Rio de Janeiro." />
+  <link rel="icon" href="favicon.png" />
+
+  <!-- Google Font: Inter (limpo, legível) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Basic SEO / Social -->
+  <meta property="og:site_name" content="Blue Node TI">
+  <meta property="og:title" content="Blue Node TI | Suporte e Soluções em Tecnologia">
+  <meta property="og:description" content="Suporte técnico, redes, servidores, LGPD, desenvolvimento e automação. Atendimento remoto e presencial no RJ.">
+  <meta property="og:image" content="https://bluenodeti.com.br/bluenodeti.png">
+  <meta property="og:url" content="https://bluenodeti.com.br/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    :root{
+      --bg1:#001d3d;
+      --bg2:#063a6b;
+      --accent:#00d1ff;
+      --text:#e6f2fb;
+      --muted:#9fb6c8;
+      --card:#07122a;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxwidth:1150px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; font-family:Inter,system-ui,Arial; color:var(--text); -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    img{max-width:100%; display:block}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:1200;
+      display:flex; align-items:center; justify-content:space-between;
+      padding:10px 4%;
+      background: linear-gradient(180deg, rgba(2,10,23,0.55), rgba(2,10,23,0.30));
+      transition:box-shadow .22s, backdrop-filter .22s, background .22s;
+      backdrop-filter: blur(0px);
+    }
+    header.scrolled{ box-shadow: 0 10px 30px rgba(0,0,0,0.45); backdrop-filter: blur(6px); }
+    .logo img{ height:46px; width:auto; display:block }
+
+    nav{ display:flex; align-items:center; gap:22px }
+    nav a{ color:var(--text); text-decoration:none; font-weight:600; padding:8px; border-radius:8px }
+    nav a:hover{ color:var(--accent) }
+
+    .primary-cta{
+      background:var(--accent); color:#002233; padding:10px 16px; border-radius:28px; font-weight:800; text-decoration:none;
+      box-shadow: 0 10px 26px rgba(0,209,255,0.12); transition:transform .12s;
+    }
+    .primary-cta:hover{ transform:translateY(-3px) }
+
+    /* Page layout */
+    .container{ max-width:var(--maxwidth); margin:28px auto; padding:0 20px; }
+
+    /* Hero */
+    .hero{
+      min-height:64vh; display:flex; align-items:center; gap:28px;
+      padding:38px 4%;
+      background:
+        radial-gradient(circle at top right, rgba(10,78,155,0.6), rgba(0,31,63,0.9)),
+        linear-gradient(180deg, rgba(0,0,0,0.06), rgba(0,0,0,0.06));
+      overflow:hidden;
+    }
+    .hero-inner{ max-width:var(--maxwidth); margin:0 auto; width:100%; display:flex; gap:32px; align-items:center; justify-content:space-between; flex-wrap:wrap; padding:12px; }
+    .hero-left{ flex:1 1 520px; min-width:280px }
+    .hero-title{ font-size:2.4rem; line-height:1.02; margin:0 0 12px 0; letter-spacing:-0.02em; color:#fff; font-weight:800 }
+    .hero-sub{ color:var(--muted); font-size:1.05rem; margin:0 0 18px 0 }
+    .hero-lead{ color:#dff5ff; margin:0 0 18px 0; line-height:1.6 }
+
+    .hero-actions{ display:flex; gap:12px; flex-wrap:wrap; align-items:center }
+    .btn-secondary{
+      background:transparent; border:1px solid rgba(255,255,255,0.08); padding:10px 16px; border-radius:10px; color:var(--text); font-weight:700;
+    }
+
+    /* Illustration block (right) */
+    .hero-right{ flex:0 0 420px; display:flex; align-items:center; justify-content:center }
+    .hero-card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:16px; padding:18px; width:100%; max-width:420px; box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+    }
+    .hero-card img{ width:100%; height:auto; border-radius:10px }
+
+    /* Services */
+    section h2{ color:var(--accent); margin:0 0 10px 0; font-size:1.4rem }
+    .services-grid{ display:grid; gap:14px; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); margin-top:14px }
+    .service{
+      background:var(--card); padding:16px; border-radius:12px; display:flex; gap:12px; align-items:flex-start; transition:transform .22s, box-shadow .22s;
+      min-height:120px;
+    }
+    .service svg{ flex:0 0 44px; width:44px; height:44px; border-radius:10px; background:linear-gradient(135deg,var(--accent),#61d6ff); padding:8px }
+    .service h3{ margin:0 0 6px 0; color:#eaf9ff; font-size:1.02rem }
+    .service p{ margin:0; color:var(--muted); line-height:1.5; font-size:0.96rem }
+    .service:hover{ transform:translateY(-8px); box-shadow: 0 22px 46px rgba(0,209,255,0.07) }
+
+    /* Grouped service boxes (category header) */
+    .service-group{ margin-top:8px }
+    .group-title{ font-weight:700; color:#cfeefb; margin-bottom:8px }
+
+    /* About */
+    .about{ display:flex; gap:18px; align-items:center; flex-wrap:wrap }
+    .about .col{ flex:1 1 360px; min-width:260px }
+    .badge{ display:inline-block; background:rgba(255,255,255,0.04); padding:6px 10px; border-radius:999px; color:var(--accent); font-weight:700; margin-bottom:12px }
+
+    /* CTA strip */
+    .cta-strip{ padding:20px; border-radius:12px; background:linear-gradient(90deg, rgba(0,209,255,0.06), rgba(255,255,255,0.01)); display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; margin-top:18px }
+    .cta-strip p{ margin:0; font-weight:700; color:#e8fbff }
+    .cta-strip a{ text-decoration:none }
+
+    /* Footer */
+    footer{ text-align:center; padding:24px 10px; color:#99a3b0; font-size:0.95rem }
+
+    /* Floating WhatsApp */
+    .whatsapp {
+      position:fixed; right:18px; bottom:18px; z-index:1400;
+    }
+    .whatsapp a{ display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:#002; padding:12px 16px; border-radius:999px; font-weight:800; text-decoration:none;
+      box-shadow: 0 18px 46px rgba(0,209,255,0.12) }
+    .whatsapp a:hover{ transform:translateY(-4px) }
+
+    /* small */
+    @media (max-width:880px){
+      .hero-right{ order:2; flex-basis:100% }
+      .hero-left{ order:1; flex-basis:100% }
+      .hero-title{ font-size:1.9rem }
+    }
+
+    /* animations: reveal */
+    .reveal{ opacity:0; transform:translateY(8px); transition: all .6s cubic-bezier(.2,.9,.3,1) }
+    .reveal.visible{ opacity:1; transform:none }
+  </style>
+
+  <!-- Schema.org - LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"Blue Node TI",
+    "url":"https://bluenodeti.com.br",
+    "logo":"https://bluenodeti.com.br/bluenodeti.png",
+    "image":"https://bluenodeti.com.br/bluenodeti.png",
+    "description":"Suporte técnico, redes, servidores, LGPD, criação de sites, automação comercial e consultoria em TI. Atendimento remoto e presencial no Rio de Janeiro.",
+    "telephone":"+5521974015057",
+    "areaServed":["São João de Meriti","Duque de Caxias","Belford Roxo","Nova Iguaçu","Mesquita","Nilópolis","Rio de Janeiro","Região Serrana","Região dos Lagos"],
+    "address": {
+      "@type":"PostalAddress",
+      "addressLocality":"São João de Meriti",
+      "addressRegion":"RJ",
+      "addressCountry":"BR"
+    },
+    "sameAs":[
+      "https://www.linkedin.com/in/danielmdpaiva",
+      "https://bluenodeti.com.br"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <header id="site-header" aria-label="Cabeçalho">
+    <div class="logo" aria-hidden="false">
+      <img src="bluenodeti.png" alt="Blue Node TI - logo">
+    </div>
+
+    <nav role="navigation" aria-label="Navegação principal">
+      <a href="#about">Sobre</a>
+      <a href="#services">Serviços</a>
+      <a class="primary-cta" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" role="banner">
+    <div class="hero-inner container">
+      <div class="hero-left reveal" id="hero-left">
+        <div class="badge">Blue Node TI</div>
+        <h1 class="hero-title">Suporte e Soluções em Tecnologia</h1>
+        <p class="hero-sub">Tecnologia sem dor de cabeça. Você cuida do seu negócio — nós cuidamos do resto.</p>
+        <p class="hero-lead">Suporte técnico, consultoria, montagem e manutenção de computadores, redes, servidores, segurança e automação comercial. Atendimento remoto em todo o Brasil e presencial no Rio de Janeiro.</p>
+
+        <div class="hero-actions">
+          <a class="primary-cta" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Entrar em Contato</a>
+          <a class="btn-secondary" href="#services">Conhecer Serviços</a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal" id="hero-right" aria-hidden="true">
+        <div class="hero-card" aria-hidden="true">
+          <!-- placeholder image: replace with illustration of your choice (use WebP for best perf) -->
+          <img loading="lazy" src="https://images.unsplash.com/photo-1555949963-aa79dcee981d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=9a18d9df7b9b4c3e768d28d1a6b4a6bf" alt="Soluções em TI - ilustrativo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" role="main">
+
+    <!-- SERVICES -->
+    <section id="services" class="reveal" aria-labelledby="services-title">
+      <h2 id="services-title">Serviços</h2>
+
+      <!-- Group: Suporte e Infraestrutura -->
+      <div class="service-group">
+        <div class="group-title">Suporte & Infraestrutura</div>
+        <div class="services-grid">
+          <article class="service" role="article" aria-label="Suporte Técnico">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2v4" stroke="#002" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"></path><path d="M4 7h16" stroke="#002" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"></path></svg>
+            <div>
+              <h3>Suporte Técnico</h3>
+              <p>Diagnóstico, remoção de vírus, otimização, formatação e suporte remoto/presencial com SLA ágil.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Montagem e Manutenção">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#002" opacity="0.07"/><path d="M4 20c4-3 8-3 16 0" stroke="#002" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            <div>
+              <h3>Montagem & Manutenção</h3>
+              <p>Montagem profissional, upgrades e manutenção preventiva/corretiva para performance e confiabilidade.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Servidores e Infraestrutura">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="6" rx="1.5" stroke="#002" stroke-width="1.4"/><rect x="3" y="14" width="18" height="6" rx="1.5" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Servidores & Infraestrutura</h3>
+              <p>Implantação, gestão e monitoramento de servidores, Active Directory, Office 365 e Azure.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Group: Segurança & Compliance -->
+      <div class="service-group">
+        <div class="group-title">Segurança & Compliance</div>
+        <div class="services-grid">
+          <article class="service" role="article" aria-label="Segurança da Informação">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2L4 7v5c0 5 4 10 8 10s8-5 8-10V7l-8-5z" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Segurança da Informação</h3>
+              <p>Firewalls, backup, políticas de acesso e proteção contra ataques e vazamentos.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Adequação LGPD">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v6" stroke="#002" stroke-width="1.6"/><path d="M8 9h8" stroke="#002" stroke-width="1.6"/></svg>
+            <div>
+              <h3>Adequação LGPD</h3>
+              <p>Mapeamento, políticas e medidas técnicas para conformidade e redução de riscos legais.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Consultoria em TI">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 6v6l4 2" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Consultoria em TI</h3>
+              <p>Planejamento, auditoria e recomendações para reduzir custos e aumentar produtividade.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Group: Desenvolvimento & Digital -->
+      <div class="service-group">
+        <div class="group-title">Desenvolvimento & Digital</div>
+        <div class="services-grid">
+          <article class="service" role="article" aria-label="Criação de Sites">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Criação de Sites</h3>
+              <p>Sites responsivos, landing pages e SEO básico com foco em conversão.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Desenvolvimento de Sistemas">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Desenvolvimento de Sistemas</h3>
+              <p>Soluções web sob medida, integrações e automações que agilizam seus processos internos.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Automação Comercial">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M8 6v12M16 6v12" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Automação Comercial</h3>
+              <p>Instalação e integração de sistemas comerciais, emissão fiscal e integração com ERP.</p>
+            </div>
+          </article>
+
+          <article class="service" role="article" aria-label="Marketing Digital">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 12h18M3 6h18M3 18h18" stroke="#002" stroke-width="1.4"/></svg>
+            <div>
+              <h3>Marketing Digital</h3>
+              <p>Gestão de redes sociais, campanhas e materiais digitais para atrair mais clientes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="reveal" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre a Blue Node TI</h2>
+      <div class="about">
+        <div class="col">
+          <p><strong>Blue Node TI</strong> entrega soluções completas em tecnologia, suporte técnico e infraestrutura para pessoas e empresas que buscam agilidade, confiabilidade e atendimento especializado.</p>
+          <p style="margin-top:10px">Com mais de <strong>10 anos de experiência</strong>, garantimos ambientes estáveis, seguros e preparados para o crescimento do seu negócio.</p>
+          <ul style="margin-top:12px; color:var(--muted); list-style: none; padding:0;">
+            <li>✔ Atendimento remoto e presencial</li>
+            <li>✔ SLA ágil e comunicação clara</li>
+            <li>✔ Soluções personalizadas e escaláveis</li>
+          </ul>
+        </div>
+        <div class="col" style="text-align:center">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=900&auto=format&fit=crop&ixlib=rb-4.0.3&s=2f3c9b9e1f3df1ef" alt="Equipe Blue Node TI" style="border-radius:10px; box-shadow: 0 10px 24px rgba(0,0,0,0.45)">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA strip -->
+    <section class="cta-strip reveal" aria-hidden="false">
+      <div>
+        <p>Pronto para resolver seus problemas de TI?</p>
+        <p style="font-size:0.95rem; color:var(--muted)">Solicite uma avaliação técnica gratuita e receba um orçamento sem compromisso.</p>
+      </div>
+      <div>
+        <a class="primary-cta" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Solicitar Avaliação Grátis</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Floating WhatsApp -->
+  <div class="whatsapp" aria-hidden="false">
+    <a href="https://wa.me/5521974015057" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+      <!-- simple phone icon -->
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,0.16))"><path d="M21 16.5a2.5 2.5 0 0 1-2.5 2.5h-0.5c-1.1 0-2.2-0.3-3.2-0.9-1-0.6-1.9-1.4-2.7-2.3-0.8-0.9-1.6-1.9-2.2-3a10.6 10.6 0 0 1-1.9-4.1c0-0.4 0-0.7 0-1A2.5 2.5 0 0 1 7.5 6h0A2.5 2.5 0 0 1 10 7.5c0 0.4 0.1 0.8 0.2 1.1a10.6 10.6 0 0 0 1.9 4.1c0.6 1 1.4 1.9 2.2 2.8 0.8 0.9 1.7 1.6 2.7 2.2 1 0.6 2.1 0.9 3.2 0.9h0.5A2.5 2.5 0 0 0 21 16.5z" fill="#002"/></svg>
+      <span style="font-weight:800">📞 WhatsApp</span>
+    </a>
+  </div>
+
+  <footer>
+    © 2025 Blue Node TI — Conecte, resolva, evolua. &nbsp; | &nbsp; <a href="https://bluenodeti.com.br" style="color:var(--muted); text-decoration:none">bluenodeti.com.br</a>
+  </footer>
+
+  <!-- Scripts: small, deferred behavior -->
+  <script>
+    // header shadow on scroll + reveal
+    (function(){
+      const header = document.getElementById('site-header');
+      window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 8));
+
+      // simple reveal using IntersectionObserver
+      const io = new IntersectionObserver((entries, obs) => {
+        entries.forEach(e => {
+          if(e.isIntersecting){
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, {threshold: 0.12});
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+  </script>
+</body>
+</html>
