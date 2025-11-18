@@ -18,6 +18,9 @@
   <meta name="description" content="Blue Node TI — Suporte técnico, manutenção, redes, servidores, sites, LGPD e consultoria em TI. Atendimento remoto em todo o Brasil e presencial no Rio de Janeiro." />
   <link rel="icon" type="image/png" href="favicon.png">
 
+  <!-- icones serviços -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +56,7 @@
       align-items:center;
       justify-content:space-between;
       padding:12px 4%;
-      background: radial-gradient(circle at top right, #0a4e9b,#13122d,#13122d);
+      /*background: radial-gradient(circle at top right, #0a4e9b,#13122d,#13122d);*/
 
       position:sticky;
       top:0;
@@ -63,7 +66,7 @@
     }
     header.scrolled{
       box-shadow: 0 6px 22px rgba(0,0,0,0.45);
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
     }
 
     .logo img{ width:200px; max-width: 85%; height:auto; display:block; }
@@ -100,7 +103,7 @@
       gap:2rem;
       padding:40px 4%;
       background:
-        linear-gradient(90deg, rgba(0,31,63,1) 0%, rgba(10,78,155,0.85) 100%),
+        linear-gradient(90deg, rgba(0,31,63,1) 0%, rgba(10,78,155,0.5) 100%),
         url('https://www.fundstalent.com/wp-content/uploads/2021/02/Funds-Talent-Corporate-Manager.jpg') no-repeat right bottom;
       background-size:cover;
       background-position: bottom center;
@@ -169,7 +172,7 @@
     /* ===== Services grid ===== */
     .services{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap:18px;
       margin-top:16px;
     }
@@ -190,6 +193,17 @@
       transform: translateY(-8px);
       box-shadow: 0 18px 40px rgba(0, 209, 255, 0.12);
     }
+
+	/* ==== icons ====*/
+	
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 
     /* ===== CTA floating ===== */
     .whatsapp-floating{
@@ -239,7 +253,7 @@
   <!-- Header -->
   <header id="site-header">
     <div class="logo" aria-label="Blue Node TI">
-      <img src="bluenodeti.png" alt="Logo Blue Node TI">
+      <img src="assets\bluenodetit.png" alt="Logo Blue Node TI">
     </div>
 
     <nav aria-label="Navegação principal">
@@ -287,85 +301,100 @@ Atendimento <strong>remoto em todo o Brasil</strong> e <strong>presencial no Rio
   </section>
 
   <main>
-    <!-- Services -->
+
+
+    <!-- Services-->
     <section id="services" class="fade-up">
       <h2>Serviços</h2>
 
       <div class="services" aria-label="Lista de serviços">
         <div class="service-card">
-          <h3>💻 Suporte Técnico</h3>
-          <p>Diagnóstico, solução de problemas, otimização, remoção de vírus e suporte completo ao usuário. Atendimento remoto ou presencial com rapidez e precisão.</p>
+	  <span class="material-symbols-outlined">support_agent</span>
+	  <h3>Suporte Técnico</h3>
+          <p>Diagnóstico, remoção de vírus, otimização, formatação e suporte remoto/presencial com SLA ágil.</p>
         </div>
 
         <div class="service-card">
-          <h3>🛠️ Montagem e Manutenção</h3>
-          <p>Montagem profissional, upgrades inteligentes e manutenção preventiva e corretiva para máxima performance e vida útil dos equipamentos.</p>
+          <span class="material-symbols-outlined">handyman</span>
+	  <h3>Montagem e Manutenção</h3>
+          <p>Montagem profissional, upgrades e manutenção preventiva/corretiva para performance e confiabilidade.</p>
         </div>
 
         <div class="service-card">
-          <h3>🖥️ Servidores & Infraestrutura</h3>
-          <p>Implantação, configuração e gestão de servidores físicos e virtuais. Active Directory, Office 365, Azure e ambientes corporativos otimizados.</p>
+          <span class="material-symbols-outlined">storage</span>
+	  <h3>Servidores & Infraestrutura</h3>
+          <p>Implantação, gestão e monitoramento de servidores, Active Directory, Office 365 e Azure.</p>
         </div>
 
         <div class="service-card">
-          <h3>🌐 Redes Locais</h3>
+          <span class="material-symbols-outlined">wifi</span><h3>Redes Locais</h3>
           <p>Redes estáveis e rápidas: cabeamento estruturado, roteadores, switches, Wi-Fi profissional e organização da infraestrutura de rede.</p>
         </div>
 
         <div class="service-card">
-          <h3>🔒 Segurança da Informação</h3>
-          <p>Proteção de dados, políticas de segurança, firewall, backup e recuperação, controle de acessos e prevenção contra vulnerabilidades.</p>
+          <span class="material-symbols-outlined">security</span><h3>Segurança da Informação</h3>
+          <p>Firewalls, backup, políticas de acesso e proteção contra ataques e vazamentos.</p>
         </div>
 
         <div class="service-card">
-          <h3>📘 Adequação LGPD</h3>
+          <span class="material-symbols-outlined">gavel</span><h3>Adequação LGPD</h3>
           <p>Mapeamento de dados, implementação de políticas e medidas técnicas para conformidade com a LGPD — reduzindo riscos e responsabilidades.</p>
         </div>
 
         <div class="service-card">
-          <h3>🧩 Consultoria em TI</h3>
+          <span class="material-symbols-outlined">fact_check</span><h3>Consultoria em TI</h3>
           <p>Estratégia, análise e otimização de ambientes tecnológicos. Indicamos soluções para reduzir custos e aumentar performance.</p>
         </div>
 
         <div class="service-card">
-          <h3>📁 Projetos de TI</h3>
+          <span class="material-symbols-outlined">tactic</span><h3>Projetos de TI</h3>
           <p>Planejamento e execução de projetos: expansão de infraestrutura, migrações, modernização e implantação de novas tecnologias.</p>
         </div>
 
         <div class="service-card">
-          <h3>🖥️ Criação de Sites</h3>
+          <span class="material-symbols-outlined">design_services</span><h3>Criação de Sites</h3>
           <p>Sites rápidos e responsivos com foco em conversão: design profissional, SEO básico e landing pages otimizadas.</p>
         </div>
 
         <div class="service-card">
-          <h3>⚙️ Automação Comercial</h3>
+          <span class="material-symbols-outlined">barcode_reader</span><h3>Automação Comercial</h3>
           <p>Instalação e suporte para sistemas comerciais, emissão fiscal, integração com equipamentos e soluções ERP.</p>
         </div>
 
         <div class="service-card">
-          <h3>📊 Desenvolvimento de Sistemas</h3>
+          <span class="material-symbols-outlined">desktop_cloud_stack</span><h3>Desenvolvimento de Sistemas</h3>
           <p>Soluções web sob medida, integrações e automações que agilizam processos e aumentam eficiência interna.</p>
         </div>
 
         <div class="service-card">
-          <h3>📣 Marketing Digital</h3>
+          <span class="material-symbols-outlined">campaign</span><h3>Marketing Digital</h3>
           <p>Gestão de redes sociais, campanhas, branding e materiais digitais para fortalecer sua presença online e gerar clientes.</p>
         </div>
       </div>
     </section>
 
+
+
+
+
+
+
+
     <!-- About -->
     <section id="about" class="fade-up">
       <h2>Sobre a Blue Node TI</h2>
-      <p>A <strong>Blue Node TI</strong> entrega soluções completas em tecnologia, suporte técnico e infraestrutura para pessoas e empresas que buscam agilidade, confiabilidade e atendimento especializado.</p>
-      <p style="margin-top:12px;">Com mais de <strong>10 anos de experiência prática</strong>, garantimos ambientes estáveis e seguros, prontos para o crescimento dos nossos clientes.</p>
-      <p style="margin-top:12px;">Nossa missão: <strong>fazer a tecnologia trabalhar a favor do seu negócio</strong>, com atendimento claro, rápido e eficiente.</p>
-      </div>
+      <p><strong>Blue Node TI</strong> entrega soluções completas em tecnologia, suporte técnico e infraestrutura para pessoas e empresas que buscam agilidade, confiabilidade e atendimento especializado.</p>
+          <p style="margin-top:10px">Com mais de <strong>10 anos de experiência</strong>, garantimos ambientes estáveis, seguros e preparados para o crescimento do seu negócio.</p>
+          <ul style="margin-top:12px; color:var(--muted); list-style: none; padding:0;">
+            <li>✔ Atendimento remoto e presencial</li>
+            <li>✔ SLA ágil e comunicação clara</li>
+            <li>✔ Soluções personalizadas e escaláveis</li>
+          </ul>
     </section>
 
     <section id="CTA" class="fade-up">
       <div style="margin-top:18px; text-align:center;">
-        <p style="margin:0 0 12px 0; font-weight:700; color:#FFF;">👉 Precisa de um parceiro confiável em TI? Fale conosco e receba uma avaliação gratuita.</p>
+        <p style="margin:0 0 12px 0; font-weight:700; color:#FFF;">Precisa de um parceiro confiável em TI? Fale conosco e receba uma avaliação gratuita.</p>
         <br>
 	<a class="btn" href="https://wa.me/5521974015057" target="_blank" rel="noopener">Chamar no WhatsApp</a>
 	<br>
